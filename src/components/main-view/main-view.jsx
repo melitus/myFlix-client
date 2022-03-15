@@ -6,6 +6,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { useRef } from 'react/cjs/react.production.min';
 
+import './main-view.scss';
+
 export class MainView extends React.Component {
 
   constructor() {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './register-view.scss';
+
 export function RegisterView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
