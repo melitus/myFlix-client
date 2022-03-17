@@ -946,17 +946,26 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _mainView = require("./components/main-view/main-view");
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 12
+                lineNumber: 14
             },
-            __self: this
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+                __source: {
+                    fileName: "src/index.jsx",
+                    lineNumber: 15
+                },
+                __self: this
+            })
         }));
     }
 }
@@ -970,7 +979,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp","react-bootstrap/Container":"2PRIq"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22748,6 +22757,10 @@ var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _loginView = require("../login-view/login-view");
 var _reactProductionMin = require("react/cjs/react.production.min");
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
 var _mainViewScss = require("./main-view.scss");
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -22784,7 +22797,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 49
+                lineNumber: 51
             },
             __self: this
         }));
@@ -22792,7 +22805,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 51
+                lineNumber: 53
             },
             __self: this
         }));
@@ -22800,31 +22813,63 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 54
+                lineNumber: 56
             },
             __self: this,
-            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                movie: selectedMovie,
-                onBackClick: (newSelectedMovie)=>{
-                    this.setSelectedMovie(newSelectedMovie);
-                },
+            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "justify-content-md-center",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 56
+                    lineNumber: 59
                 },
-                __self: this
-            }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                    movie: movie,
-                    onMovieClick: (newSelectedMovie)=>{
-                        this.setSelectedMovie(newSelectedMovie);
-                    },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    md: 8,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 58
+                        lineNumber: 60
                     },
-                    __self: this
-                }, movie._id)
-            )
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                        movie: selectedMovie,
+                        onBackClick: (newSelectedMovie)=>{
+                            this.setSelectedMovie(newSelectedMovie);
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 61
+                        },
+                        __self: this
+                    })
+                })
+            }) : /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "justify-content-md-center",
+                __source: {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 66
+                },
+                __self: this,
+                children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        md: 5,
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 68
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                            movie: movie,
+                            onMovieClick: (newSelectedMovie)=>{
+                                this.setSelectedMovie(newSelectedMovie);
+                            },
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 69
+                            },
+                            __self: this
+                        }, movie._id)
+                    })
+                )
+            })
         }));
     }
 }
@@ -22834,7 +22879,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../login-view/login-view":"054li","react/cjs/react.production.min":"fqwJd","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../login-view/login-view":"054li","react/cjs/react.production.min":"fqwJd","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -24418,6 +24463,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
+            id: "main-card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 13
@@ -24425,7 +24471,9 @@ class MovieCard extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
+                    id: "cover_img",
                     variant: "top",
+                    crossOrigin: "anonymous",
                     src: movie.ImagePath,
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
@@ -24485,7 +24533,7 @@ MovieCard.propTypes = {
             Name: _propTypesDefault.default.string.isRequired
         })
     }).isRequired,
-    onMovieClick: _propTypesDefault.default.funcisRequired
+    onMovieClick: _propTypesDefault.default.func.isRequired
 };
 
   $parcel$ReactRefreshHelpers$4249.postlude(module);
@@ -25789,6 +25837,8 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        crossOrigin: "anonymous",
+                        id: "poster_img",
                         src: movie.ImagePath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
@@ -25977,6 +26027,7 @@ function LoginView(props) {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                        id: "label",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
                             lineNumber: 22
@@ -26005,6 +26056,7 @@ function LoginView(props) {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                        id: "label",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
                             lineNumber: 27
@@ -26048,7 +26100,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap":"h2YVd"}],"lS4BK":[function() {},{}],"5ykgY":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","./login-view.scss":"lS4BK","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp"}],"5ykgY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -26638,7 +26690,7 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , 
 FloatingLabel.displayName = 'FloatingLabel';
 exports.default = FloatingLabel;
 
-},{"classnames":"bOXOh","react":"6TuXu","./FormGroup":"gWNri","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7"}],"h2YVd":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./FormGroup":"gWNri","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7"}],"lS4BK":[function() {},{}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default

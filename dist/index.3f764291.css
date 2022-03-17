@@ -1,8 +1,49 @@
+#cover_img {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#main-card {
+  background-color: #393e46;
+  color: white;
+}
+#poster_img {
+  width: 33%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.movie-view {
+  height: 100%;
+  color: white;
+}
+body {
+  background-color: #222831;
+  min-height: 100%;
+  height: 100%;
+}
 
+Form {
+  height: 100%;
+}
+
+#label {
+  color: white;
+}
 
 .my-flix {
   color: steelblue;
+}
+
+.app-container {
+  background-color: #222831;
+}
+
+html {
+  background-color: #222831;
+  min-height: 100%;
 }
 /*# sourceMappingURL=index.3f764291.css.map */
