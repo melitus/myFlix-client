@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 import './login-view.scss';
+import { FormControl } from 'react-bootstrap';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -9,29 +12,23 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
+    // Send a request to the server for authentication
     props.onLoggedIn(username);
   };
 
   return (
-    <div className="Forms">
-      <form>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-        </label>
-        <label>
-          Password:
-          <input type="text" value={password} onChange={e => setPassword(e.target.value)} />
-        </label>
-        <button type="submit" onClick={handleSubmit}>Login</button>
-      </form>
+    <Form>
+      <Form.Group controlId="formUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+      </Form.Group>
 
-      <div className="signup_button">
-        <a href="...">Resgister Here!</a>
-      </div>
+      <Form.Group controlId="formPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control type="text" onChange={e => setPassword(e.target.value)} />
+      </Form.Group>
 
-    </div>
+      <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+    </Form>
   );
 }
