@@ -979,7 +979,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp","react-bootstrap/Container":"2PRIq"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","react-bootstrap/Container":"2PRIq","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22879,7 +22879,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../login-view/login-view":"054li","react/cjs/react.production.min":"fqwJd","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../login-view/login-view":"054li","react/cjs/react.production.min":"fqwJd","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"l17M7","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1S4yp"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
