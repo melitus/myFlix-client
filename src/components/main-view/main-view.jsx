@@ -10,6 +10,7 @@ import { RegisterView } from '../register-view/register-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { NavigationView } from '../navigation-view/navigation-view';
 import { useRef } from 'react/cjs/react.production.min';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -80,6 +81,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
+        <NavigationView user={user} />
         <Row className="main-view justify-content-md-center">
 
           <Route exact path="/" render={() => {
@@ -137,11 +139,6 @@ export class MainView extends React.Component {
               <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
             </Col>
           }} />
-
-          <button onClick={() => {
-            this.onLoggedOut()
-          }}>Logout</button>
-
         </Row>
       </Router>
 
