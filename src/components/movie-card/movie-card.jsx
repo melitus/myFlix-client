@@ -10,17 +10,30 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
 
-  onAddFavorite = (movie_id) => {
+  constructor() {
+    super();
+
+    this.state = {
+      FavoriteMovies: []
+    };
+  }
+
+  onAddFavorite = (movie) => {
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
     axios.post(
-      `https://popcorns-and-coke.herokuapp.com/users/${Username}/movies/${movie_id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    }
-    )
+      `https://popcorns-and-coke.herokuapp.com/users/${Username}/movies/${movie._id}`,
+      {
+        FavoriteMovies: this.state.FavoriteMovies
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => {
-        this.SetState = response.data.movie._id;
+        this.setState({
+          FavoriteMovies: response.data.FavoriteMovies
+        });
         console.log(response);
         alert("Movie Added");
       })
@@ -41,7 +54,7 @@ export class MovieCard extends React.Component {
           <Link to={`/movies/${movie._id}`}>
             <Button variant="link">Open</Button>
           </Link>
-          <Button className="ml-3" variant="submit" value={movie._id} onClick={() => this.onAddFavorite()}>Add to Favorite</Button>
+          <Button className="ml-3" variant="submit" value={movie._id} onClick={() => this.onAddFavorite(movie)}>Add to Favorite</Button>
         </Card.Body>
       </Card>
     );
