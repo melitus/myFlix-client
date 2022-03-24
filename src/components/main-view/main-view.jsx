@@ -8,6 +8,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegisterView } from '../register-view/register-view';
 import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 import { useRef } from 'react/cjs/react.production.min';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -104,6 +106,22 @@ export class MainView extends React.Component {
             return <Col md={8}>
               <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
             </Col>
+          }} />
+
+          <Route path="/profile" render={({ history }) => {
+            if (!user) {
+              return (
+                <Col>
+                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                </Col>
+              );
+            }
+
+            return (
+              <Col md={8}>
+                <ProfileView movies={movies} onBackClick={() => history.goBack()} />
+              </Col>
+            );
           }} />
 
           <Route path="/directors/:name" render={({ match, history }) => {
