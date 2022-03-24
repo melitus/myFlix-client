@@ -96,7 +96,7 @@ export class ProfileView extends React.Component {
 
     axios
       .delete(
-        `https://orishflix.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        `https://popcorns-and-coke.herokuapp.com/users/${Username}/movies/${movie._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -262,6 +262,7 @@ export class ProfileView extends React.Component {
                                 <Card.Img
                                   className="fav-poster"
                                   variant="top"
+                                  crossOrigin="anonymous"
                                   src={movie.ImagePath}
                                 />
                                 <Card.Body style={{ backgroundColor: "black" }}>
