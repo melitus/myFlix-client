@@ -2,14 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
 import './movie-card.scss';
 
 export class MovieCard extends React.Component {
+
+  onAddFavorite = (movie_id) => {
+    const Username = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+
+    axios.post(
+      `https://popcorns-and-coke.herokuapp.com/users/${Username}/movies/${movie_id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+    )
+      .then((response) => {
+        this.SetState = response.data.movie._id;
+        console.log(response);
+        alert("Movie Added");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   render() {
-    const { movie } = this.props;
+    const { movie, onAddFavorite } = this.props;
 
     return (
       <Card id="main-card">
@@ -20,6 +41,7 @@ export class MovieCard extends React.Component {
           <Link to={`/movies/${movie._id}`}>
             <Button variant="link">Open</Button>
           </Link>
+          <Button className="ml-3" variant="submit" value={movie._id} onClick={() => this.onAddFavorite()}>Add to Favorite</Button>
         </Card.Body>
       </Card>
     );
@@ -38,5 +60,5 @@ MovieCard.propTypes = {
       Name: PropTypes.string.isRequired
     })
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  onMovieClick: PropTypes.func
 };
