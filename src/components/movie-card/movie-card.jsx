@@ -49,13 +49,15 @@ export class MovieCard extends React.Component {
       <Card id="main-card">
         <Card.Img id="cover_img" variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
         <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
+          <Card.Title className="text-center">
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant="link">{movie.Title}</Button>
+            </Link></Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant="link">Open</Button>
-          </Link>
-          <Button className="ml-3" variant="submit" value={movie._id} onClick={() => this.onAddFavorite(movie)}>Add to Favorite</Button>
         </Card.Body>
+        <Card.Footer className="text-center">
+          <Button variant="primary" value={movie._id} onClick={() => this.onAddFavorite(movie)}>Add to Favorite</Button>
+        </Card.Footer>
       </Card>
     );
   }
