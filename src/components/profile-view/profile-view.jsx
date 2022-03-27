@@ -167,9 +167,25 @@ export class ProfileView extends React.Component {
       <Container className="profile-view" align="center">
         <Row>
           <Col>
-            <Card className="update-profile">
+            <Card className="user-info" style={{ color: "white", backgroundColor: "#393e46" }}>
               <Card.Body>
-                <Card.Title>Profile</Card.Title>
+                <Card.Title>User Info</Card.Title>
+                <div>
+                  <span style={{ color: "white" }}>Username: {Username}</span>
+                </div>
+                <div>
+                  <span style={{ color: "white" }}>Email: {Email}</span>
+                </div>
+                <div>
+                  <span style={{ color: "white" }}>Birthday: {Birthday}</span>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="update-profile" style={{ color: "white", backgroundColor: "#393e46" }}>
+              <Card.Body>
+                <Card.Title>Update Profile</Card.Title>
                 <Form className="update-form" onSubmit={(e) =>
                   this.editUser(
                     e,
@@ -234,16 +250,16 @@ export class ProfileView extends React.Component {
           </Col>
         </Row>
 
-        <Card>
+        <Card className="favorite-view border-0" style={{ backgroundColor: "#222831" }}>
           <Card.Body>
 
             <Row>
               <Col>
-                <h4 id="fm_text_color">{Username} Favorite Movies</h4>
+                <h4 id="fm_text_color" style={{ color: "white" }}>{Username} Favorite Movies</h4>
               </Col>
             </Row>
 
-            <Card>
+            <Card className="favorite-view border-0" style={{ backgroundColor: "#222831" }}>
               <Card.Body>
                 {FavoriteMovies.length === 0 && (
                   <div className="text-center" id="fm_text_color">No Favorite Movies</div>
