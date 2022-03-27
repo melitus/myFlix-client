@@ -23,7 +23,7 @@ export function NavigationView({ user }) {
   };
 
   return (
-    <Navbar className="main-nav" sticky="top" expand="lg" variant="dark">
+    <Navbar className="main-nav" expand="lg" variant="dark">
       <Container fluid>
         <Navbar.Brand className="navbar-logo" href="/">Popcorns and Coke</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

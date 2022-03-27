@@ -11,16 +11,11 @@ export class DirectorView extends React.Component {
     const { director, onBackClick, movies } = this.props;
 
     return (
-      <Container>
-        <Card>
+      <Container className="director-view">
+        <Card className="border-0" style={{ color: "white", backgroundColor: "#222831" }}>
           <Card.Body>
-            <Card.Title>Director</Card.Title>
+            <Card.Title>{director.Name}</Card.Title>
             <Card.Text>
-              <span className="label">Name: </span>
-              <span className="value">{director.Name}</span>
-            </Card.Text>
-            <Card.Text>
-              <span className="label">Bio: </span>
               <span className="value">{director.Bio}</span>
             </Card.Text>
             <Card.Text>

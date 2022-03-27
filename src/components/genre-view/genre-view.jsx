@@ -11,16 +11,11 @@ export class GenreView extends React.Component {
     const { genre, onBackClick, movies } = this.props;
 
     return (
-      <Container>
-        <Card>
+      <Container className="genre-view">
+        <Card className="border-0" style={{ color: "white", backgroundColor: "#222831" }}>
           <Card.Body>
-            <Card.Title>Genre</Card.Title>
+            <Card.Title>{genre.Name}</Card.Title>
             <Card.Text>
-              <span className="label">Name: </span>
-              <span className="value">{genre.Name}</span>
-            </Card.Text>
-            <Card.Text>
-              <span className="label">Description: </span>
               <span className="value">{genre.Description}</span>
             </Card.Text>
           </Card.Body>
