@@ -1,16 +1,16 @@
 #cover_img {
-  width: 30%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: 50vh;
 }
 
 #main-card {
   background-color: #393e46;
   color: white;
+  width: 100%;
+  height: 100%;
 }
 #poster_img {
-  width: 33%;
+  width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -18,7 +18,12 @@
 
 .movie-view {
   height: 100%;
+  margin-top: 15%;
   color: white;
+}
+
+.movie-text {
+  padding-top: 5%;
 }
 body {
   background-color: #222831;
@@ -36,9 +41,31 @@ Form {
 #label {
   color: white;
 }
+.director-view {
+  margin-top: 30%;
+}
+.genre-view {
+  margin-top: 30%;
+}
+.favorite-movie {
+  width: 100%;
+  height: 100%;
+}
 
+.fav-poster {
+  width: 100%;
+  height: 100%;
+}
 
+.update-profile {
+  float: right;
+}
 
+.user-info {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
 
 
 .my-flix {
