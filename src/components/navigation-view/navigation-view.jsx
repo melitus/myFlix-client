@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
-import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 
 import './navigation-view.scss';
