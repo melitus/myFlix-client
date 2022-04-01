@@ -5,7 +5,6 @@
   "default": "src/index.html",
   "scripts": {
     "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html",
     "preinstall": "npx npm-force-resolutions",
     "postbuild": "echo '/* /index.html 200' | cat >dist/_redirects"
   },
