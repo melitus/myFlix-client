@@ -4,7 +4,10 @@
   "description": "",
   "default": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "preinstall": "npx npm-force-resolutions",
+    "postbuild": "echo '/* /index.html 200' | cat >dist/_redirects"
   },
   "repository": {
     "type": "git",
