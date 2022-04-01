@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "default": "src/index.html",
-  "scripts": {},
+  "scripts": {
+    "start": "parcel serve ./src/index.html",
+    "preinstall": "npx npm-force-resolutions",
+    "postbuild": "echo '/* /index.html 200' | cat >dist/_redirects"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Droidca/myFlix-client.git"
